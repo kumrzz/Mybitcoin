@@ -27,7 +27,9 @@ nonce = struct.pack("Q", random.getrandbits(64))
 
 user_agent_bytes = struct.pack("B", 0)
 
-starting_height = struct.pack("L", 395292)
+#below two edited(coz I am in testnet) per bitcoin-cli getpeerinfo
+# inside C:\Program Files\Bitcoin\daemon\
+starting_height = struct.pack("L", 827515)
 
 relay = struct.pack("?", False)
 
@@ -45,8 +47,10 @@ msg = magic + command + length + check + payload
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-HOST = "66.90.137.89"
-PORT = 8333
+#below two edited(coz I am in testnet) per bitcoin-cli getpeerinfo
+# inside C:\Program Files\Bitcoin\daemon\
+HOST = "185.24.221.107"
+PORT = 18333
 
 s.connect((HOST, PORT))
 
